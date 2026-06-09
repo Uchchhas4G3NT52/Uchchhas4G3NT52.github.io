@@ -1,65 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uchchhas Dutta - Engineering Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uchchhas Dutta | Electrical & Electronics Engineer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#articles">Articles</a></li>
+  <nav class="navbar">
+    <a class="logo" href="#">U.D.</a>
+    <ul>
+      <li><a href="#home">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Research</a></li>
+      <li><a href="#internships">Experience</a></li>
+      <li><a href="#articles">Notes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="bg-circuit-dark" id="home">
+    <div class="hero-container" style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; position: relative; z-index: 10;">
+      
+      <img src="YOUR_PROFILE_PICTURE_LINK" alt="Uchchhas Dutta" style="width: 200px; height: 200px; border-radius: 50%; border: 4px solid var(--primary); box-shadow: 0 10px 25px rgba(0,0,0,0.2); object-fit: cover;">
+      
+      <div class="hero-text" style="text-align: left;">
+        <h1>Uchchhas Dutta</h1>
+        <h2>Electrical & Electronics Engineer</h2>
+        <p style="max-width: 600px; margin-bottom: 30px;">Bridging the gap between traditional power systems hardware and modern software automation to create highly efficient engineering solutions.</p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <a class="btn" href="#projects">
+            <span>View My Research</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a class="btn btn-outline" href="#contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact Me</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <svg class="electric-towers" preserveAspectRatio="xMidYMax slice" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
+          <feGaussianBlur result="blur" stdDeviation="3"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+      </defs>
+      
+      <g class="tower-line" transform="translate(100, 50) scale(0.8)">
+        <path d="M 150 300 L 200 100 L 250 300 M 175 200 L 225 200 M 188 150 L 212 150 M 200 100 L 200 50 M 160 80 L 240 80 M 140 120 L 260 120"/>
+        <path d="M 150 300 L 225 200 M 250 300 L 175 200 M 175 200 L 212 150 M 225 200 L 188 150"/>
+      </g>
+      
+      <g class="tower-line" transform="translate(500, 20) scale(0.9)">
+        <path d="M 150 300 L 200 100 L 250 300 M 175 200 L 225 200 M 188 150 L 212 150 M 200 100 L 200 50 M 160 80 L 240 80 M 140 120 L 260 120"/>
+        <path d="M 150 300 L 225 200 M 250 300 L 175 200 M 175 200 L 212 150 M 225 200 L 188 150"/>
+      </g>
+      
+      <g class="tower-line" transform="translate(900, 60) scale(0.7)">
+        <path d="M 150 300 L 200 100 L 250 300 M 175 200 L 225 200 M 188 150 L 212 150 M 200 100 L 200 50 M 160 80 L 240 80 M 140 120 L 260 120"/>
+        <path d="M 150 300 L 225 200 M 250 300 L 175 200 M 175 200 L 212 150 M 225 200 L 188 150"/>
+      </g>
+
+      <path class="tower-wire" d="M -50 120 Q 150 150 260 90 Q 450 130 680 65 Q 850 120 1040 95 Q 1150 120 1250 100"/>
+      <path class="tower-wire" d="M -50 160 Q 150 190 244 122 Q 450 170 662 92 Q 850 150 1026 123 Q 1150 160 1250 130"/>
+      <path class="tower-wire" d="M -50 200 Q 150 230 228 154 Q 450 210 644 119 Q 850 180 1012 151 Q 1150 190 1250 160"/>
+    </svg>
+  </header>
+
+  <section id="about">
+    <div class="section-header">
+      <span class="section-subtitle">Introduction</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    
+    <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+        <i class="fa-solid fa-microchip"></i>
+      </div>
+      <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px;">I am an Electrical and Electronics Engineer based in Dhaka, holding a B.Sc. from Southeast University. My background is uniquely positioned at the intersection of electrical infrastructure and modern programming logic.</p>
+      <p style="font-size: 1.1rem; color: var(--text-muted);">I approach complex systems using the 80/20 Pareto principle—identifying the vital inputs that drive the maximum output. Whether I am optimizing power grids, designing complex PCBs, or scripting python automation, my goal is always scalable efficiency.</p>
+    </div>
+  </section>
+
+  <section class="bg-circuit-dark" id="skills" style="max-width: 100%; padding: 100px 5%; margin: 60px 0;">
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 10;">
+      <div class="section-header">
+        <span class="section-subtitle">Expertise</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+
+      <div class="skills-container">
+        <div class="skill-card card">
+          <div class="icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Hardware Systems</h3>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Power Systems Analysis</li>
+            <li><i class="fa-solid fa-check"></i> PCB Design & Layout</li>
+            <li><i class="fa-solid fa-check"></i> Router Optimization</li>
+            <li><i class="fa-solid fa-check"></i> Electrical Diagnostics</li>
+          </ul>
+        </div>
+
+        <div class="skill-card card">
+          <div class="icon-wrapper"><i class="fa-solid fa-code"></i></div>
+          <h3>Software & Code</h3>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> C Programming</li>
+            <li><i class="fa-solid fa-check"></i> Python Automation</li>
+            <li><i class="fa-solid fa-check"></i> Web Structuring (HTML/CSS)</li>
+            <li><i class="fa-solid fa-check"></i> Network Analysis</li>
+          </ul>
+        </div>
+
+        <div class="skill-card card">
+          <div class="icon-wrapper"><i class="fa-solid fa-brain"></i></div>
+          <h3>Methodologies</h3>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Prompt Engineering (AI)</li>
+            <li><i class="fa-solid fa-check"></i> 80/20 Agile Learning</li>
+            <li><i class="fa-solid fa-check"></i> Data Synthesis</li>
+            <li><i class="fa-solid fa-check"></i> Technical Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-subtitle">Portfolio</span>
+      <h2 class="section-title">Featured Research</h2>
+    </div>
+    
+    <div class="card project-card">
+      <div class="tags">
+        <span class="tag">Power Efficiency</span>
+        <span class="tag">Hardware Optimization</span>
+        <span class="tag">Urban Transport</span>
+      </div>
+      <h3>Electric Rickshaws in Dhaka: Survey & Improvement Modeling</h3>
+      <p style="font-weight: 500; color: var(--dark); margin-bottom: 15px;"><i class="fa-solid fa-user-tie" style="color: var(--primary); margin-right: 8px;"></i> Role: Lead Researcher & Author</p>
+      <p>A comprehensive thesis investigating the electrical architecture of local electric rickshaws. The research involved extensive field surveys to analyze current battery consumption, motor efficiency, and structural limitations of existing models operating in Dhaka.</p>
+      
+      <div style="background: rgba(255,255,255,0.5); padding: 20px; border-radius: 12px; margin-top: 20px; border-left: 4px solid var(--primary);">
+        <h4 style="margin-bottom: 10px; color: var(--dark);"><i class="fa-solid fa-bullseye" style="color: var(--secondary); margin-right: 8px;"></i> Key Objectives Achieved</h4>
+        <ul style="list-style-type: none;">
+          <li style="margin-bottom: 8px; color: var(--text-muted);"><i class="fa-solid fa-angle-right" style="color: var(--primary); margin-right: 10px;"></i> Identified core inefficiencies in current localized EV drivetrains.</li>
+          <li style="margin-bottom: 8px; color: var(--text-muted);"><i class="fa-solid fa-angle-right" style="color: var(--primary); margin-right: 10px;"></i> Proposed actionable electrical improvements to extend battery lifespan.</li>
+          <li style="color: var(--text-muted);"><i class="fa-solid fa-angle-right" style="color: var(--primary); margin-right: 10px;"></i> Synthesized massive survey data into a validated technical thesis.</li>
         </ul>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <header class="hero-container" id="about">
-        <div class="profile-pic">
-            <img src="YOUR_PHOTO_LINK_HERE" alt="Uchchhas Dutta">
-        </div>
-        <div class="hero-text">
-            <h1>Uchchhas Dutta</h1>
-            <h2>Electrical and Electronics Engineer</h2>
-            <p>Specializing in power systems, hardware, and engineering projects.</p>
-            <div class="hero-buttons">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=uchchhasdutta5698@gmail.com" target="_blank" class="btn primary-btn">Email Me</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="btn secondary-btn">LinkedIn</a>
-            </div>
-        </div>
-    </header>
+  <section id="internships">
+    <div class="section-header">
+      <span class="section-subtitle">Experience & Leadership</span>
+      <h2 class="section-title">Career & Activities</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; align-items: start;">
+      
+      <div>
+        <h3 style="margin-bottom: 20px; color: var(--dark); border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;"><i class="fa-solid fa-briefcase" style="color: var(--primary); margin-right: 8px;"></i> Internships</h3>
 
-    <section id="experience" class="section-container">
-        <h2 class="section-title">Experience & Extra-Curriculars</h2>
+        <div class="card project-card" style="position: relative; padding-bottom: 60px;">
+          <div class="tags">
+            <span class="tag"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> June 2023 - August 2023</span>
+          </div>
+          <h3>Electrical Engineering Intern</h3>
+          <p style="font-weight: 500; color: var(--dark); margin-bottom: 15px;"><i class="fa-solid fa-building" style="color: var(--primary); margin-right: 8px;"></i> Dhaka Electric Supply Company Limited (DESCO)</p>
+          <p>Gained hands-on experience with distribution network operation and substation maintenance. Spent significant time in the Substation Control Room analyzing and observing real-time grid operations.</p>
+          
+          <div style="margin-top: 15px;">
+            <h4 style="font-size: 1rem; color: var(--dark); margin-bottom: 8px;">Key Learning Outcomes:</h4>
+            <ul style="list-style-type: disc; margin-left: 20px; color: var(--text-muted);">
+              <li>Analyzed Transformers, Switchgear, and GIS (Gas Insulated Switchgear).</li>
+              <li>Observed Protective Devices and Relay mechanisms in action.</li>
+              <li>Studied Metering, Billing, and IT infrastructure for power distribution systems.</li>
+            </ul>
+          </div>
+
+          <a class="hover-pop-btn" href="desco-internship.html">
+            <i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 5px;"></i> Read Full Experience & Photos
+          </a>
+        </div>
+
+        <div class="card project-card">
+          <div class="tags">
+            <span class="tag"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> March 2023 - April 2023</span>
+          </div>
+          <h3>Project Management Intern</h3>
+          <p style="font-weight: 500; color: var(--dark); margin-bottom: 15px;"><i class="fa-solid fa-building" style="color: var(--primary); margin-right: 8px;"></i> Reverie Power & Automation Engineering Ltd</p>
+          <p>Worked within the project management division, bridging the gap between technical design and operational execution.</p>
+          <div style="margin-top: 15px;">
+            <h4 style="font-size: 1rem; color: var(--dark); margin-bottom: 8px;">Key Learning Outcomes:</h4>
+            <ul style="list-style-type: disc; margin-left: 20px; color: var(--text-muted);">
+              <li>Drafted and reviewed engineering designs using AutoCAD.</li>
+              <li>Handled computer data entry and system management.</li>
+              <li>Created project visual materials using Graphic Design tools.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom: 20px; color: var(--dark); border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;"><i class="fa-solid fa-users" style="color: var(--primary); margin-right: 8px;"></i> Extra-Curricular</h3>
         
-        <div class="grid-layout">
-            <div class="card project-card">
-                <h3>DESCO Internship Experience</h3>
-                <p>Gained hands-on experience in power distribution, substation operations, and switchgear management.</p>
-                <a href="https://uchchhas.blogspot.com/p/desco-internship.html" target="_blank" class="read-more-link">View Full Experience & Photos</a>
-            </div>
-
-            <div class="card project-card">
-                <h3>Technical Secretary</h3>
-                <p>Southeast University EEE Club (Feb 2022 - March 2023)</p>
-                <p>Acted as the core technical lead, organizing events and managing technical initiatives. Received an award for outstanding performance.</p>
-                <img src="YOUR_GOOGLE_PHOTOS_IMAGE_LINK_HERE" alt="EEE Club Event" class="card-image">
-            </div>
+        <div class="card project-card">
+          <div class="tags">
+            <span class="tag"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> Feb 2022 - March 2023</span>
+          </div>
+          <h3>Technical Secretary</h3>
+          <p style="font-weight: 500; color: var(--dark); margin-bottom: 15px;"><i class="fa-solid fa-building-columns" style="color: var(--primary); margin-right: 8px;"></i> Southeast University EEE Club</p>
+          <p>Acted as the core technical lead for the university's Electrical and Electronic Engineering Club, organizing events and managing technical initiatives.</p>
+          
+          <div style="margin-top: 15px;">
+            <h4 style="font-size: 1rem; color: var(--dark); margin-bottom: 8px;">Key Achievements:</h4>
+            <ul style="list-style-type: disc; margin-left: 20px; color: var(--text-muted);">
+              <li>Received an award for outstanding performance and contributions to the club's activities.</li>
+              <li>Coordinated technical seminars, workshops, and inter-departmental engineering projects.</li>
+            </ul>
+            <img src="YOUR_GOOGLE_PHOTOS_IMAGE_LINK_HERE" alt="Award Ceremony" style="width: 100%; max-height: 300px; border-radius: 8px; margin-top: 20px; object-fit: cover;">
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="articles" class="section-container">
-        <h2 class="section-title">Previous Tech Notes</h2>
-        <div id="blog-feed" class="grid-layout"></div>
-        
-        <div class="view-all-container">
-            <a href="https://uchchhas.blogspot.com/search" target="_blank" class="btn secondary-btn">View All Articles</a>
+    </div>
+  </section>
+
+  <section id="articles">
+    <div class="section-header">
+      <span class="section-subtitle">Archive</span>
+      <h2 class="section-title">Previous Tech Notes</h2>
+    </div>
+    
+    <div id="recent-posts-container" style="max-width: 800px; margin: 0 auto;">
+      <div style="text-align:center; padding:40px; color:var(--text-muted);">
+        <i class="fa-solid fa-spinner fa-spin fa-2x"></i><br>Loading posts...
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+      <a class="btn btn-outline" href="https://uchchhas.blogspot.com/search" style="color: var(--primary) !important; border-color: var(--primary);" target="_blank">
+        <span>View All Articles</span>
+        <i class="fa-solid fa-list"></i>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-wrapper">
+      <div class="card" style="background: linear-gradient(135deg, var(--dark) 0%, #1E293B 100%); color: #fff; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+        <div style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;">
+          <i class="fa-regular fa-handshake"></i>
         </div>
-    </section>
+        <h2 style="color: #fff; margin-bottom: 20px;">Let's Build Something.</h2>
+        <p style="color: #94A3B8; margin-bottom: 30px;">Currently open to engineering roles, project collaborations, and hardware consultations in Dhaka and beyond.</p>
+         
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+          <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=uchchhasdutta5698@gmail.com" style="background: #fff; color: var(--dark) !important;" target="_blank">
+            <i class="fa-solid fa-paper-plane" style="color: var(--primary);"></i> Email Me
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/uchchhas-dutta/" style="background: #0A66C2;" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <footer style="border-top: 1px solid rgba(0,0,0,0.05); text-align: center; padding: 40px 5%; margin-top: 50px; color: var(--text-muted); font-size: 0.9rem;">
+    <div style="margin-bottom: 15px; font-size: 1.2rem;">
+      <a href="#" style="color: var(--text-muted); margin: 0 10px;"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/uchchhas-dutta/" style="color: var(--text-muted); margin: 0 10px;"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <p>&copy; 2026 Uchchhas Dutta. Designed with modern web standards.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
