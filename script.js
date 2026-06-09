@@ -1,54 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // URL pointing to your hidden Blogger backend API
-    const blogUrl = "https://uchchhas.blogspot.com/feeds/posts/default?alt=json&max-results=2";
+document.addEventListener("DOMContentLoaded", function() {
+  const container = document.getElementById('recent-posts-container');
+  
+  if(container) {
+    // Fetches the latest 2 posts directly from your Blogger backend
+    fetch('https://uchchhas.blogspot.com/feeds/posts/default?alt=json&max-results=2')
+      .then(response => response.json())
+      .then(data => {
+        const feed = data.feed;
+        const posts = feed.entry || [];
+        let html = '';
+        
+        if(posts.length === 0) {
+          container.innerHTML = '<p style="text-align:center;">No previous posts found.</p>';
+          return;
+        }
 
-    fetch(blogUrl)
-        .then(response => response.json())
-        .then(data => {
-            const feedContainer = document.getElementById('blog-feed');
-            const posts = data.feed.entry;
-            
-            if (posts && posts.length > 0) {
-                posts.forEach(post => {
-                    // Extract data from the Blogger JSON response
-                    const title = post.title.$t;
-                    let link = "#";
-                    
-                    // Find the actual URL link for the post
-                    for (let i = 0; i < post.link.length; i++) {
-                        if (post.link[i].rel === 'alternate') {
-                            link = post.link[i].href;
-                            break;
-                        }
-                    }
-
-                    // Extract snippet/summary if available
-                    let snippet = "";
-                    if (post.summary) {
-                        snippet = post.summary.$t.substring(0, 120) + "...";
-                    } else if (post.content) {
-                        // Strip HTML tags for clean text preview
-                        let tempDiv = document.createElement("div");
-                        tempDiv.innerHTML = post.content.$t;
-                        snippet = tempDiv.textContent.substring(0, 120) + "...";
-                    }
-
-                    // Construct the HTML card and inject it
-                    const postHTML = `
-                        <div class="card project-card">
-                            <h3>${title}</h3>
-                            <p>${snippet}</p>
-                            <a href="${link}" target="_blank" class="read-more-link">Read Article</a>
-                        </div>
-                    `;
-                    feedContainer.innerHTML += postHTML;
-                });
-            } else {
-                feedContainer.innerHTML = "<p>No recent articles found.</p>";
+        posts.forEach(post => {
+          const title = post.title.$t;
+          let link = '#';
+          for(let i=0; i<post.link.length; i++) {
+            if(post.link[i].rel === 'alternate') {
+              link = post.link[i].href;
+              break;
             }
-        })
-        .catch(error => {
-            console.error('Error loading posts:', error);
-            document.getElementById('blog-feed').innerHTML = "<p>Error loading articles. Please check your connection.</p>";
+          }
+          
+          const dateObj = new Date(post.published.$t);
+          const dateString = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+          
+          html += `
+            <a href="${link}" class="blog-list-item" target="_blank">
+              <div class="blog-meta"><i class="fa-regular fa-calendar" style="margin-right:5px;"></i> ${dateString}</div>
+              <h3 style="font-size: 1.3rem; color: var(--dark); margin-bottom: 10px;">${title}</h3>
+              <div class="read-more" style="font-size: 0.9rem; color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 5px;">Read Post <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+          `;
         });
+        container.innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Error fetching posts:', err);
+        container.innerHTML = '<p style="text-align:center; color:red;">Error loading posts.</p>';
+      });
+  }
+});
+
+/* Security & Protection Blocks */
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', (e) => {
+    // Blocks F12, Ctrl+Shift+I, and Ctrl+U
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+        (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+    }
 });
